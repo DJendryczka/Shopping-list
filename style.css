@@ -27,9 +27,9 @@ h1 {
   border: 2px solid #58a5bf;
   border-radius: 20px;
   background-color: #add8e6;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.7),
-  0 0 40px rgba(0, 255, 255, 0.5), 
-  0 0 60px rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+  0 0 20px rgba(0, 255, 255, 0.5), 
+  0 0 30px rgba(0, 255, 255, 0.3);
 }
 
 .container form {
