@@ -90,7 +90,7 @@ h1 {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap:7px;
 }
 
 .shopping-list li {
