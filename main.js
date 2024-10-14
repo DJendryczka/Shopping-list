@@ -15,6 +15,19 @@ const addToCartButton = document.getElementById('addButton');
 const itemInput = document.getElementById('item');
 const shoppingList = document.querySelector('.shopping-list');
 
+// Function to create and append list item with click-to-remove feature
+function createListItem(key, item) {
+    const listItem = document.createElement('li');
+    listItem.textContent = item;
+
+    // Add click event to remove the item
+    listItem.addEventListener('click', () => {
+        removeItem(key); // Pass the Firebase key of the item
+    });
+
+    shoppingList.appendChild(listItem); // Append the li to the ul
+}
+
 // Fetch existing items from Firebase and display them
 cartList.on('value', (snapshot) => {
     // Clear the current list
@@ -27,12 +40,10 @@ cartList.on('value', (snapshot) => {
         // Loop through the items and append each one to the list
         for (const key in items) {
             const item = items[key];
-            const listItem = document.createElement('li');
-            listItem.textContent = item; // Set the text of the li to the item
-            shoppingList.appendChild(listItem); // Append the li to the ul
+            createListItem(key, item); // Create and append list item
         }
     } else {
-        alert('No items found in the cart list');
+        console.log('No items found in the cart list');
     }
 });
 
@@ -50,6 +61,17 @@ addToCartButton.addEventListener('click', (event) => {
 
         console.log('Adding item:', item);
     } else {
-        alert('Item input is empty');
+        console.log('Item input is empty');
     }
 });
+
+// Function to remove the item from Firebase and the UI
+function removeItem(key) {
+    // Remove the item from Firebase using the key
+    cartList.child(key).remove().then(() => {
+        console.log(`Item with key ${key} removed successfully`);
+    }).catch((error) => {
+        console.error('Error removing item:', error);
+    });
+}
+
