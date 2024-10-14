@@ -83,3 +83,25 @@ h1 {
   object-fit: cover;
   border-radius: 20px;
 }
+
+.shopping-list {
+  width: 100%;
+  margin-top: 30px;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shopping-list li {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  border: 3px solid #80bace;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.7),
+  0 0 40px rgba(0, 255, 255, 0.5), 
+  0 0 60px rgba(0, 255, 255, 0.3);
+}

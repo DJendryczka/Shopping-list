@@ -32,7 +32,7 @@ cartList.on('value', (snapshot) => {
             shoppingList.appendChild(listItem); // Append the li to the ul
         }
     } else {
-        console.log('No items found in the cart list');
+        alert('No items found in the cart list');
     }
 });
 
@@ -50,6 +50,6 @@ addToCartButton.addEventListener('click', (event) => {
 
         console.log('Adding item:', item);
     } else {
-        console.log('Item input is empty');
+        alert('Item input is empty');
     }
 });
